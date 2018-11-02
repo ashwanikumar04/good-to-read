@@ -11,7 +11,7 @@ This is a list of articles/ blog posts for best practices, system designs etc.
 
 <!-- /TOC -->
 
-## System Design
+## *System Design*
 
 ### How to deliver messages exactly once on scale
 
@@ -32,7 +32,7 @@ This article explains an approach for a scalable event scheduler using a home-gr
 
 > #### More detail is available [here](https://medium.com/walmartlabs/an-approach-to-designing-distributed-fault-tolerant-horizontally-scalable-event-scheduler-278c9c380637)
 
-## Best Practices
+## *Best Practices*
 
 ### Build
 
