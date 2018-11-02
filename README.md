@@ -41,7 +41,5 @@ One of the better approach is to use docker container to build the projects.
 This article explains how to use docker container to build a project.
 
 > #### More detail is available
->
-- [here](https://mikulskibartosz.name/how-to-build-a-project-inside-a-docker-container-fd575058bf4a)
-- [here](https://dzone.com/articles/maven-build-local-project-with-docker-why)
-
+> - [here](https://mikulskibartosz.name/how-to-build-a-project-inside-a-docker-container-fd575058bf4a)
+> - [here](https://dzone.com/articles/maven-build-local-project-with-docker-why)
