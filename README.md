@@ -1,15 +1,12 @@
 This is a list of articles/ blog posts for best practices, system designs etc.
+- [*System Design*](#system-design)
+  - [How to deliver messages exactly once on scale](#how-to-deliver-messages-exactly-once-on-scale)
+  - [Scalable task queues](#scalable-task-queues)
+  - [An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler](#an-approach-to-designing-a-distributed-fault-tolerant-horizontally-scalable-event-scheduler)
+  - [Scalable task scheduler](#scalable-task-scheduler)
+- [*Best Practices*](#best-practices)
+  - [Build](#build)
 
-<!-- TOC -->
-
-- [System Design](#system-design)
-    - [How to deliver messages exactly once on scale](#how-to-deliver-messages-exactly-once-on-scale)
-    - [Scalable task queues](#scalable-task-queues)
-    - [An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler](#an-approach-to-designing-a-distributed-fault-tolerant-horizontally-scalable-event-scheduler)
-- [Best Practices](#best-practices)
-    - [Build](#build)
-
-<!-- /TOC -->
 
 ## *System Design*
 
@@ -31,6 +28,18 @@ This article explains a scalable architecture for task queues. A kafka cluster i
 This article explains an approach for a scalable event scheduler using a home-grown application on top of cassandra.
 
 > #### More detail is available [here](https://medium.com/walmartlabs/an-approach-to-designing-distributed-fault-tolerant-horizontally-scalable-event-scheduler-278c9c380637)
+
+### Scalable task scheduler
+
+These articles explains a fault tolerant and highly scalable design for a task scheduler using kafka, cassandra and akka.
+
+> #### More detail is available
+> - [Part1](https://www.pagerduty.com/eng/distributed-task-scheduling-pt1/)
+> - [Part2](https://www.pagerduty.com/eng/distributed-task-scheduling-pt2/)
+> - [Part3](https://www.pagerduty.com/eng/distributed-task-scheduling-3/)
+> - [Talk](https://www.youtube.com/watch?v=s3GfXTnzG_Y)
+
+
 
 ## *Best Practices*
 
