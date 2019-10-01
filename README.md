@@ -4,6 +4,7 @@ This is a list of articles/ blog posts for best practices, system designs etc.
   - [Scalable task queues](#scalable-task-queues)
   - [An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler](#an-approach-to-designing-a-distributed-fault-tolerant-horizontally-scalable-event-scheduler)
   - [Scalable task scheduler](#scalable-task-scheduler)
+  - [Scaling websockets](#scaling-websockets)
   - [How to count unique in billions of keys with very less memory print](#how-to-count-unique-in-billions-of-keys-with-very-less-memory-print)
 - [*Best Practices*](#best-practices)
   - [Build](#build)
@@ -33,6 +34,12 @@ This article explains an approach for a scalable event scheduler using a home-gr
 ### Scalable task scheduler
 
 These articles explains a fault tolerant and highly scalable design for a task scheduler using kafka, cassandra and akka.
+
+### Scaling websockets
+
+In this article, an approach for horizontally scaling websockets is discussed.
+
+> #### More details [here](https://hackernoon.com/scaling-websockets-9a31497af051)
 
 > #### More detail is available
 > - [Part1](https://www.pagerduty.com/eng/distributed-task-scheduling-pt1/)
