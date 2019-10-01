@@ -4,6 +4,7 @@ This is a list of articles/ blog posts for best practices, system designs etc.
   - [Scalable task queues](#scalable-task-queues)
   - [An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler](#an-approach-to-designing-a-distributed-fault-tolerant-horizontally-scalable-event-scheduler)
   - [Scalable task scheduler](#scalable-task-scheduler)
+  - [How to count unique in billions of keys with very less memory print](#how-to-count-unique-in-billions-of-keys-with-very-less-memory-print)
 - [*Best Practices*](#best-practices)
   - [Build](#build)
 
@@ -39,7 +40,11 @@ These articles explains a fault tolerant and highly scalable design for a task s
 > - [Part3](https://www.pagerduty.com/eng/distributed-task-scheduling-3/)
 > - [Talk](https://www.youtube.com/watch?v=s3GfXTnzG_Y)
 
+### How to count unique in billions of keys with very less memory print
 
+This article explains the approach of counting unique keys with a very less error using very small memory.
+
+> #### More details is available [here](http://highscalability.com/blog/2012/4/5/big-data-counting-how-to-count-a-billion-distinct-objects-us.html)
 
 ## *Best Practices*
 
