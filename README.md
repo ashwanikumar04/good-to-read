@@ -24,7 +24,6 @@ This article explains a scalable architecture for task queues. A kafka cluster i
 
 > #### More detail is available [here](https://slack.engineering/scaling-slacks-job-queue-687222e9d100)
 
-
 ### An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler
 
 This article explains an approach for a scalable event scheduler using a home-grown application on top of cassandra.
