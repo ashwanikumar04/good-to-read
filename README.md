@@ -4,8 +4,8 @@ This is a list of articles/ blog posts for best practices, system designs etc.
   - [Scalable task queues](#scalable-task-queues)
   - [An Approach to Designing a Distributed, Fault-Tolerant, Horizontally Scalable Event Scheduler](#an-approach-to-designing-a-distributed-fault-tolerant-horizontally-scalable-event-scheduler)
   - [Scalable task scheduler](#scalable-task-scheduler)
-  - [Scaling websockets](#scaling-websockets)
   - [How to count unique in billions of keys with very less memory print](#how-to-count-unique-in-billions-of-keys-with-very-less-memory-print)
+  - [Scaling websockets](#scaling-websockets)
 - [*Best Practices*](#best-practices)
   - [Build](#build)
 
@@ -34,11 +34,6 @@ This article explains an approach for a scalable event scheduler using a home-gr
 
 These articles explains a fault tolerant and highly scalable design for a task scheduler using kafka, cassandra and akka.
 
-### Scaling websockets
-
-In this article, an approach for horizontally scaling websockets is discussed.
-
-> #### More details [here](https://hackernoon.com/scaling-websockets-9a31497af051)
 
 > #### More detail is available
 > - [Part1](https://www.pagerduty.com/eng/distributed-task-scheduling-pt1/)
@@ -51,6 +46,13 @@ In this article, an approach for horizontally scaling websockets is discussed.
 This article explains the approach of counting unique keys with a very less error using very small memory.
 
 > #### More details is available [here](http://highscalability.com/blog/2012/4/5/big-data-counting-how-to-count-a-billion-distinct-objects-us.html)
+
+
+### Scaling websockets
+
+In this article, an approach for horizontally scaling websockets is discussed.
+
+> #### More details [here](https://hackernoon.com/scaling-websockets-9a31497af051)
 
 ## *Best Practices*
 
