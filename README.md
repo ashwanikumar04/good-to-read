@@ -6,6 +6,7 @@ This is a list of articles/ blog posts for best practices, system designs etc.
   - [Scalable task scheduler](#scalable-task-scheduler)
   - [How to count unique in billions of keys with very less memory print](#how-to-count-unique-in-billions-of-keys-with-very-less-memory-print)
   - [Scaling websockets](#scaling-websockets)
+  - [Builing a highest Query per Second GeoSearch Service](#builing-a-highest-query-per-second-geosearch-service)
 - [*Best Practices*](#best-practices)
   - [Build](#build)
 
@@ -53,6 +54,13 @@ This article explains the approach of counting unique keys with a very less erro
 In this article, an approach for horizontally scaling websockets is discussed.
 
 > #### More details [here](https://hackernoon.com/scaling-websockets-9a31497af051)
+
+### Builing a highest Query per Second GeoSearch Service
+
+This article explains an approach to develop a highly scalable gea-fencing service.
+
+> #### More details [here](https://eng.uber.com/go-geofence/)
+
 
 ## *Best Practices*
 
