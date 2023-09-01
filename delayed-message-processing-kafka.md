@@ -1,7 +1,3 @@
-Certainly! I've updated the article to include code snippets that demonstrate the strategies and handling mechanisms discussed for Method 1 and other methods.
-
----
-
 # Implementing Delayed Message Processing in Apache Kafka
 
 Delayed message processing is a common requirement in distributed systems. This article explores various strategies to implement this feature in Apache Kafka.
@@ -149,6 +145,3 @@ if (System.currentTimeMillis() >= record.timestamp() + ttl) {
 
 Use an external scheduler like Quartz to schedule the message processing. The scheduler triggers a consumer to process the message from Kafka when it's time.
 
----
-
-This comprehensive guide should help you implement delayed message processing in Apache Kafka. Choose the method that best suits your project requirements.
