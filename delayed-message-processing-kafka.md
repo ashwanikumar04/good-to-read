@@ -1,6 +1,6 @@
 # Implementing Delayed Message Processing in Apache Kafka
 
-Delayed message processing is a common requirement in distributed systems. This article explores various strategies to implement this feature in Apache Kafka.
+Delayed message processing is essential in distributed systems. This guide explores multiple strategies to implement this in Apache Kafka.
 
 ## Table of Contents
 
@@ -10,6 +10,7 @@ Delayed message processing is a common requirement in distributed systems. This 
 2. [Method 2: Use Punctuate in Kafka Streams API](#method-2-use-punctuate-in-kafka-streams-api)
 3. [Method 3: TTL and Log Compaction](#method-3-ttl-and-log-compaction)
 4. [Method 4: External Scheduler](#method-4-external-scheduler)
+5. [Illustrative Diagrams](#illustrative-diagrams)
 
 ---
 
@@ -18,8 +19,8 @@ Delayed message processing is a common requirement in distributed systems. This 
 ### Overview
 
 - Produce the message to a "delay" topic with a `scheduled_time`.
-- A consumer reads messages from the "delay" topic and checks against the `scheduled_time`.
-- If the time to process has arrived, forward the message to the actual topic for processing.
+- A consumer reads messages from this topic and checks the `scheduled_time`.
+- Once the time arrives, forward the message to the actual processing topic.
 
 ### Code Snippet for Basic Logic
 
@@ -45,11 +46,9 @@ while (true) {
 
 ### Avoiding Looping of Messages
 
-To avoid loops for messages scheduled far into the future, you can use a few strategies:
-
 #### Time-based Re-queueing
 
-Store messages in a priority queue, sorted by the scheduled time. Periodically, flush this queue back into the delay topic.
+Store messages in a priority queue, sorted by `scheduled_time`. At intervals, flush this queue back to the delay topic.
 
 ```java
 PriorityQueue<ScheduledMessage> delayQueue = new PriorityQueue<>();
@@ -62,13 +61,9 @@ if (System.currentTimeMillis() >= scheduledTime) {
 }
 ```
 
-#### Use Different Delay Topics
-
-You could also segregate messages into different delay topics based on how far in the future they are scheduled. 
-
 ### Handling Consumer Failures in Method 1
 
-Consumer failures can result in the loss of messages stored in in-memory data structures. 
+Consumer failures can cause message loss. Here are some code techniques to handle this:
 
 #### Persistent Local Storage
 
@@ -82,8 +77,6 @@ fos.close();
 ```
 
 #### Distributed Cache using Redis
-
-Here is how you can use Redis to store the delay queue:
 
 ```java
 Jedis jedis = new Jedis("localhost");
@@ -99,9 +92,7 @@ if (System.currentTimeMillis() >= scheduledTime) {
 
 ## Method 2: Use Punctuate in Kafka Streams API
 
-### Overview
-
-Use Kafka Streams' `punctuate` feature to periodically check a state store and forward the messages whose `scheduled_time` has arrived to the actual topic.
+Use Kafka Streams' `punctuate` feature to periodically check a state store and then forward ready messages.
 
 ```java
 // In your Processor class
@@ -122,9 +113,7 @@ public void punctuate(long timestamp) {
 
 ## Method 3: TTL and Log Compaction
 
-### Overview
-
-Produce messages with a unique key and a TTL (Time-to-Live). Enable log compaction on the topic. Consumers process messages only if their TTL has expired.
+Produce messages with a unique key and a TTL. Enable log compaction on the topic. Consumers process messages once their TTL has expired.
 
 ```java
 // Produce with TTL
@@ -143,5 +132,31 @@ if (System.currentTimeMillis() >= record.timestamp() + ttl) {
 
 ## Method 4: External Scheduler
 
-Use an external scheduler like Quartz to schedule the message processing. The scheduler triggers a consumer to process the message from Kafka when it's time.
+Use an external scheduler, e.g., Quartz, to trigger message processing in Kafka.
 
+---
+
+## Illustrative Diagrams
+
+### Basic Delay Logic
+
+```
++------------+          +----------+           +--------------+
+|   Producer | ------>  | Delay    |  ------>  |  Consumer    |
+|            |          | Topic    |           | (checks time)|
++------------+          +----------+           +--------------+
+```
+
+### Handling Failures with Redis Cache
+
+```
++------------+          +----------+           +--------------+
+|   Producer | ------>  | Delay    |  ------>  |  Consumer    |
+|            |          | Topic    |           |  (can fail)  |
++------------+          +----------+           +------|-------+
+                                                  |
+                                                  v
+                                              +-------+
+                                              | Redis |
+                                              +-------+
+```
